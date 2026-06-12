@@ -27,12 +27,11 @@ Read `BUILD_GUIDE.md` (copied from template) for stack-specific project structur
 - `make build` — production build
 - `make db-push` — push schema to database (if applicable)
 
-## AWS Infrastructure (provision with scripts/preflight.sh)
-Run `bash scripts/preflight.sh` before starting the loop. It creates:
-- **RDS Postgres** — database instance, connection string added to `.env`
-- **S3** — storage bucket with CORS
-- **ECR** — Docker image repository
-- **SES** — email identity verification
+## Vercel + Neon Infrastructure (provision with scripts/preflight.sh)
+Run `bash scripts/preflight.sh` before starting the loop. It verifies:
+- **Neon Postgres** — serverless database, connection string in `.env` as `DATABASE_URL`
+- **Vercel** — project linked, env vars pushed to production
+- Deploy via `vercel --prod` or git push
 
 ## Doc Scraper (Phase 1 only — auto-installed)
 The inspect loop calls `scripts/scrape-docs.py` once before iteration 1 to populate `target-docs/` with the target product's documentation. The first time you run `./ralph/inspect-ralph.sh`, it will:

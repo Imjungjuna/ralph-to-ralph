@@ -52,3 +52,7 @@ drizzle/
 packages/sdk/dist/
 
 # Language-specific ignores are appended by onboarding (setup-stack.sh)
+.qrspi/
+.next/
+dist/
+package-lock.json

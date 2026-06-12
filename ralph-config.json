@@ -1,0 +1,37 @@
+{
+  "targetUrl": "https://carrd.co",
+  "targetName": "carrd-clone",
+  "deploymentProfile": "fast-starter",
+  "cloudProvider": "vercel",
+  "deploymentTier": "personal",
+  "language": "typescript",
+  "stackProfile": "dashboard-app",
+  "framework": "nextjs",
+  "database": "postgres",
+  "dbProvider": "neon",
+  "skipDeploy": false,
+  "authMode": "api-key",
+  "docsUrl": "https://carrd.co/docs",
+  "browserAgent": "playwright",
+  "services": {},
+  "sdk": {
+    "enabled": false,
+    "languages": []
+  },
+  "research": {
+    "apiEndpoints": [],
+    "authPattern": "api-key",
+    "dataModel": "Sites with elements, templates, forms, custom domains",
+    "summary": "Carrd is a one-page website builder. Users create sites from templates or blank canvas, add elements (text, images, video, buttons, forms, widgets), customize styling, and publish to carrd.co subdomains or custom domains. Pro features include forms, widgets, analytics, custom CSS, and branding removal. No public API — purely a visual builder with server-side rendering and hosting."
+  },
+  "setup": {
+    "verified": ["node", "vercel-cli", "neon"],
+    "pending": ["ever-cli"],
+    "checks": {
+      "node": { "command": "node -v", "status": "pass", "detail": "v25.2.1" },
+      "vercel-cli": { "command": "vercel whoami", "status": "pass", "detail": "imjungjuna" },
+      "neon": { "envVar": "DATABASE_URL", "status": "pass" },
+      "ever-cli": { "command": "ever --version", "status": "fail", "error": "not installed — using Playwright fallback" }
+    }
+  }
+}
